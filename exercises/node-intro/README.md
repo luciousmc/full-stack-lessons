@@ -22,7 +22,7 @@ Node.js itself is written in a combination of JavaScript and C++. Python and Per
 1. Read about Node.js on the project's [About page](https://nodejs.org/en/about/). It will probably seem like Greek to you but in time you will understand quite a bit of what's being said there. Feel free to jot down any questions you may have.
 1. In your terminal type `node --version` and press `enter` to see the current version of Node.js that is installed in your development environment.
 1. If you like, you can peruse the `man` page for `node`, but boy-oh-boy, it's a lot and not required for now.
-1. Create a new file named `hello-node.js` and add a line of JavaScript that uses [`console.log()`](https://nodejs.org/docs/latest-v10.x/api/console.html#console_console_log_data_args) to print the string `"Hello, Node!"`.
+1. Open the `hello-node.js` file in your code editor and add a line of JavaScript that uses [`console.log()`](https://nodejs.org/docs/latest-v10.x/api/console.html#console_console_log_data_args) to print the string `"Hello, Node!"`.
 1. Execute your `hello-node.js` file with the `node` command like this:
     ```bash
     node hello-node.js
