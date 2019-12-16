@@ -16,12 +16,24 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
 1. Within `timeout.js`:
     - use `console.log()` to print the message `"Hello, just a moment..."`.
     - use `setTimeout()` and `console.log()` to print the message `"Thanks for waiting!"` after 2 seconds have passed.
+1. Execute `timeout.js` with the `node` command to test your code like this:
+    ```bash
+    node timeout.js
+    ```
 1. Read about `setInterval()` in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval).
 1. Within `interval.js`:
     - declare a variable to hold the current count (`3`)
     - use `setInterval()` to log the count (`console.log()`) and decrement it every second until it hits `0`.
     - when the current count is `0` log the message `"Blast off!"` and use [`clearInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval) to stop the program.
+1. Execute `interval.js` with the `node` command to test your code like this:
+    ```bash
+    node interval.js
+    ```
 1. Watch Phil Roberts's JSConf [presentation on the JavaScript Event Loop](https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=659s).
+
+<p align="middle">
+  <img src="images/the-event-loop.gif">
+</p>
 
 ### Submitting Your Solution
 
