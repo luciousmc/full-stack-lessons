@@ -12,7 +12,7 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
 
 ### Submitting Your Solution
 
-When your solution is complete, return to the root of your `senior-back-end-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
+When your solution is complete, return to the root of your `lfz-full-stack-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
 
 ### Quiz
 
