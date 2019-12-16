@@ -1,6 +1,6 @@
 # command-line-basics
 
-This exercise covers some basic command line literacy for [UNIX-like operating systems](https://en.wikipedia.org/wiki/Unix-like). It primarily focuses on manipulation of files and directories.
+This exercise covers some basic command-line literacy for [UNIX-like operating systems](https://en.wikipedia.org/wiki/Unix-like). It primarily focuses on manipulation of files and directories.
 
 ### Before You Begin
 
@@ -30,7 +30,7 @@ Use the up and down arrows (or PgUp and PgDn) to scroll the page. Press `space` 
     ```
 1. Read the `NAME`, `SYNOPSIS`, and `DESCRIPTION` sections. Only read the first part of the description. If you want, you can scan the options list, but we won't be using any of those options for now.
 1. Use the `cat` command to print the contents of `laziness.txt`, `impatience.txt`, and `hubris.txt` one-by-one to your terminal.
-1. Use the `cat` command to combine the contents of those files and print the result.
+1. Use the `cat` command to combine the contents of those files and print the result to the terminal.
 1. Use the `cat` command to combine the contents of those files and write the result to a new file named `three-virtues.txt` like this:
     ```bash
     cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
@@ -48,7 +48,7 @@ Use the up and down arrows (or PgUp and PgDn) to scroll the page. Press `space` 
 1. Use the `ls` command to list the contents of the `lfz-staff/` directory. **You do not need to `cd` into a directory to list its contents!** Try it again with the `-a` and `-F` options.
 1. Use the `ls` command to list the contents of the `lfz-staff/` directory and write the results to a new file at `lfz-staff/contents.txt` like this:
     ```bash
-    ls -aF lfz-staff > contents.txt
+    ls -aF lfz-staff > lfz-staff/contents.txt
     ```
 1. Use the `cat` command to print contents of your new `lfz-staff/contents.txt` file to the terminal.
 
@@ -90,7 +90,7 @@ Use the up and down arrows (or PgUp and PgDn) to scroll the page. Press `space` 
     ```
 1. Read the `NAME`, `SYNOPSIS`, and `DESCRIPTION` sections. You can ignore the options for now.
 1. Use the `touch` command to create a new file named `tag-youre-it.txt`.
-1. Use the `touch` command to create a new file named `boop.txt` inside of the `snoot/` directory.
+1. Use the `touch` command to create a new file named `boop.txt` inside of the `snoot/` directory. **You do not need to `cd` into a directory to create a file inside it.**
 1. Use the `ls` command to list the contents of the `snoot/` directory.
 
 #### `mkdir`
@@ -136,6 +136,7 @@ Use the up and down arrows (or PgUp and PgDn) to scroll the page. Press `space` 
 1. Read the `NAME`, `SYNOPSIS`, and `DESCRIPTION` sections. You can ignore all of the options, but you might be interested in the `-r` option in the future.
 1. Use the `cp` command to make a copy of the `and-then.txt` named `no-and-then.txt`.
 1. Use the `ls` command to verify that `and-then.txt` and `no-and-then.txt` both exist in your current working directory.
+1. Use the `cat` command to verify that `and-then.txt` and `no-and-then.txt` contain the same content.
 
 ### Submitting Your Solution
 
