@@ -1,4 +1,4 @@
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)# node-module-system
+# node-module-system
 
 This lesson introduces the basics of how Node.js supports [modular programming](https://en.wikipedia.org/wiki/Modular_programming).
 

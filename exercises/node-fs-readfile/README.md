@@ -24,9 +24,9 @@ A [file system](https://en.wikipedia.org/wiki/File_system) is a way of organizin
 1. Create a new file named `read-any.js`.
 1. Within `read-any.js` use `fs.readFile` and `process.argv` to print the contenst of any specified file to the terminal.
 
-#### ADVANCED - ONLY DO AFTER LEVEL 1 AND 2 ARE TURNED IN - NOT REQUIRED
+#### ADVANCED - ONLY DO AFTER LEVELS 1 AND 2 ARE TURNED IN - NOT REQUIRED
 
-1. Create a new file named `cat.js` that can take any number of files via `process.arv`, concatenate their contents, and print the result to the terminal (just like the `cat` command).
+1. Create a new file named `cat.js` that can take any number of files via `process.arv`, concatenate their contents, and print the result to the terminal (just like the `cat` command). **Guarantee that the order of the combined contents match the order of the file names passed to the program.**
 
 ### Submitting Your Solution
 
