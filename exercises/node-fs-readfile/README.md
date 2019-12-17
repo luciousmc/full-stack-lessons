@@ -19,14 +19,27 @@ A [file system](https://en.wikipedia.org/wiki/File_system) is a way of organizin
 1. Within `read-dijkstra.js`, call the `require()` function to import the `'fs'` module.
 1. Use `fs.readFile` to read the contents of `dijkstra.txt` and print it to the terminal.
 
+<p align="middle">
+  <img src="images/read-dijkstra.gif">
+</p>
+
 #### Level 2
 
 1. Create a new file named `read-any.js`.
 1. Within `read-any.js` use `fs.readFile` and `process.argv` to print the contenst of any specified file to the terminal.
 
+<p align="middle">
+  <img src="images/read-any.gif">
+</p>
+
 #### ADVANCED - ONLY DO AFTER LEVELS 1 AND 2 ARE TURNED IN - NOT REQUIRED
 
 1. Create a new file named `cat.js` that can take any number of files via `process.arv`, concatenate their contents, and print the result to the terminal (just like the `cat` command). **Guarantee that the order of the combined contents match the order of the file names passed to the program.**
+
+<p align="middle">
+  <img src="images/cat.gif">
+</p>
+
 
 ### Submitting Your Solution
 
