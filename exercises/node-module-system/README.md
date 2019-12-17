@@ -19,16 +19,16 @@ Let's explore some of the things that the Node.js module system includes.
 1. Read the [introductory section of Modules](https://nodejs.org/docs/latest-v10.x/api/modules.html#modules_modules) in the official Node.js documentation.
 1. Read about [the module wrapper](https://nodejs.org/docs/latest-v10.x/api/modules.html#modules_the_module_wrapper) in the official Node.js documentation.
 1. Within any Node.js module, `exports`, `require`, `module`, `__filename`, and `__dirname` all _appear_ to be "global" variables. They're defined and present. Within `a-wrapped-module.js`, use `console.log` (with labels!) to:
-    - print the value of `exports` to the terminal
     - print the [`typeof`] `exports` to the terminal
-    - print the value of `require` to the terminal
+    - print the value of `exports` to the terminal
     - print the [`typeof`] `require` to the terminal
-    - print the value of `module` to the terminal
+    - print the value of `require` to the terminal
     - print the [`typeof`] `module` to the terminal
-    - print the value of `__filename` to the terminal
+    - print the value of `module` to the terminal
     - print the [`typeof`] `__filename` to the terminal
-    - print the value of `__dirname` to the terminal
+    - print the value of `__filename` to the terminal
     - print the [`typeof`] `__dirname` to the terminal
+    - print the value of `__dirname` to the terminal
 1. Execute `a-wrapped-module.js` with the `node` command.
 1. Read about [the module scope](https://nodejs.org/docs/latest-v10.x/api/modules.html#modules_the_module_scope) in the official Node.js documentation.
 1. To get a sense of what is _truly_ global in Node.js programs, compare [the module scope](https://nodejs.org/docs/latest-v10.x/api/modules.html#modules_the_module_scope) to [Node.js globals](https://nodejs.org/docs/latest-v10.x/api/globals.html).
