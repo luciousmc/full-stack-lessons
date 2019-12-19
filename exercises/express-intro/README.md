@@ -14,7 +14,7 @@ Express.js is an extremely popular and widely deployed web server framework for 
 
 1. Read about Express.js on the [expressjs.com](https://expressjs.com) home page.
 1. Create a new `package.json` for this exercise with the `npm init` command.
-1. Use `npm` to install [the `express` package]() from the NPM registry.
+1. Use `npm` to install [the `express` package](https://www.npmjs.com/package/express) from the NPM registry.
 1. Verify that `express` was added to your `package.json` dependencies.
 1. Verify that it was downloaded into your local `node_modules/` directory.
 1. Bookmark the official [Express.js 4 Documentation](https://expressjs.com/en/4x/api.html).
@@ -29,8 +29,8 @@ Express.js is an extremely popular and widely deployed web server framework for 
       console.log('Express server listening on port 3000');
     });
     ```
-1. Start your server by executing `index.js` with the `node` command.
-1. In a separate terminal session, use the `top` command to verify that a `node` process is running.
+1. Start your server by executing `index.js` with the `node` command. You can stop it at any time by pressing `Ctrl + C`.
+1. In a separate terminal session, use the `top` command to confirm that a `node` process is running.
 1. [Use the `http` command to issue a `GET` request to `localhost:3000`](https://httpie.org/doc#examples).
     - **It doesn't matter what directory you're in when you send the `GET` request.**
     - **You should receive a 404 Not Found response from the server.**
