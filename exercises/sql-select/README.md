@@ -115,10 +115,10 @@ select "productId",
 
 The result set would look like this:
 
-| productId | name        | description                | price | category |
-|-----------|-------------|----------------------------|-------|----------|
-| 85        | ShamWow     | Soaks up so much liquid!   | 20    | cleaning |
-| 91        | OxyClean    | A versatile stain remover! | 10    | cleaning |
+| productId | name        | price |
+|-----------|-------------|-------|
+| 85        | ShamWow     | 20    |
+| 91        | OxyClean    | 10    |
 
 Here are a few things to note about the above example. Look back at the example to confirm.
 
