@@ -207,7 +207,7 @@ psql -d pagila -f name-of-file.sql
 
 1. `two-kilmers.sql`
 
-    Get the `actorId` and `firstName` of only three actors with the `lastName` of `'Kilmer'`.
+    Get the `actorId` and `firstName` of only two actors with the `lastName` of `'Kilmer'`.
 
 1. `all-categories.sql`
 
