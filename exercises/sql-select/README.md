@@ -263,6 +263,7 @@ When your solution is complete, return to the root of your `lfz-full-stack-lesso
 
 ### Quiz
 
+- What is SQL and how is it different from languages like JavaScript?
 - How do you retrieve specific columns from a database table?
 - How do you filter rows based on some specific criteria?
 - What are the benefits of formatting your SQL?
