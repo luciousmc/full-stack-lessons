@@ -10,7 +10,7 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
 
 [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) is the primary way of interacting with relational databases. It is a powerful way of retrieving, creating, and manipulating data in a relational database.
 
-You may be familiar with **imperative** programming languages such as JavaScript, where you basically tell the JavaScript runtime **what to do and how to do it**.
+You may be familiar with **imperative** programming languages such as JavaScript, where you basically tell the JavaScript runtime what to do **and how to do it**.
 
   - Store this value (variables)
   - Make this choice (conditionals)
@@ -20,7 +20,7 @@ SQL is different! SQL is a **declarative** programming language. In declarative 
 
 #### Selecting Columns from a Table
 
-For now, we'll talk about how to _query_ data in a database. This lesson does not cover how to _modify_ any data in the database. Instead, what is presented is how to _read_ data from a database Consider this table of `"products"` data and imagine if it were _many_ products long:
+For now, we'll talk about how to _query_ data in a database. This lesson does not cover how to _modify_ any data in the database. Instead, what is presented is how to _read_ data from a database. Consider this table of `"products"` data and imagine if it were _many_ products long:
 
 | productId | name        | description                | price | category |
 |-----------|-------------|----------------------------|-------|----------|
@@ -52,7 +52,7 @@ Here are a few things to note about that example `select` statement. Look back a
 - The `select` keyword is followed by **a comma-separated list of column names**, each surrounded by `"` double quotes.
 - The column names are followed by a **`from` clause specifying which table** to retrieve the data from.
 - The query **must end in a `;` semicolon**.
-- SQL keywords such as `select` and `from` are not case-sensitive.
+- SQL keywords such as `select` and `from` are **not** case-sensitive.
 - SQL does not _have_ to be indented, but you should do it anyway for consistent style and therefore readability.
 
 #### Selecting All the Things
@@ -79,7 +79,7 @@ Here are a few things to note about the above example `select` statement. Look b
 
 #### Sorting Results
 
-As mentioned above, it should never be assumed that rows retrieved from a table will be returned is a specific, predictable order. However, it is possible to include an **`order by`** clause in the `select` statement to control the order of the result set.
+As mentioned above, it should never be assumed that rows retrieved from a table will be returned in a specific, predictable order. However, it is possible to include an **`order by`** clause in the `select` statement to control the order of the result set.
 
 ```sql
 select *
@@ -126,7 +126,7 @@ Here are a few things to note about the above example. Look back at the example 
 - The `where` clause comes _after_ the `from` clause.
 - The `where` clause is checking the `"category"` of each row in the table.
 - Text values, such as `'cleaning'` are wrapped in `'` single quotes; not double quotes!
-- The value of the `"category"` column is being compared using a single `=` equals sign. (Other comparisons like `<`, `>`, and `!=` are available too).
+- The value of the `"category"` column is being **compared using a single `=` equals sign**. (Other comparisons like `<`, `>`, and `!=` are available too).
 - Don't forget: unless the `select` statement includes an `order by` clause, the order of the result set is not guaranteed.
 
 #### Getting Fewer Results
@@ -152,7 +152,7 @@ select "name",
 Before we look at the result set, here are some things to note about the example `select` statement:
 
 - The `limit` clause **comes last**.
-- The `limit` clause includes a **literal integer number** with no quotes.
+- The `limit` clause includes a **literal integer number** with no quotes to specify the maximum number of rows that should be returned.
 - The sort order of the `order by` clause is switched to **descending order** with the `desc` keyword.
 
 And here is the result set. We've selected the name and description of the most expensive product in the table.
@@ -163,7 +163,99 @@ And here is the result set. We've selected the name and description of the most 
 
 ### Exercise
 
-1.
+For this exercise, you will be authoring queries in individual `.sql` files in the exercise directory and then executing them against the `pagila` DVD Rental database. If you have not set up the `pagila` database, then you probably skipped the [`postgres-database`](../postgres-database) lesson.
+
+Before you can begin, it's important to confirm that the PostgreSQL database server is running. The status should be **`online`**. You can check with the following command:
+
+```bash
+sudo service postgresql status
+```
+
+If your database server is not online, then you can start it with the following command:
+
+```bash
+sudo service postgresql start
+```
+
+To start the `pgweb` GUI tool for PostgreSQL, run the following command in a separate terminal session, then visit `http://localhost:8081` in your browser:
+
+```bash
+pgweb --db=pagila
+```
+
+You can execute each `.sql` file that you write with the following command and its results will be printed to STDOUT (your terminal):
+
+```bash
+psql -d pagila -f name-of-file.sql
+```
+
+1. `all-actors.sql`
+
+    Get all columns of all rows in the `actors` table.
+
+1. `actor-names.sql`
+
+    Get the `actorId`, `firstName`, and `lastName` of all actors.
+
+1. `actor-forty.sql`
+
+    Get all columns for the actor with the `actorId` of `40`.
+
+1. `ten-actor-first-names.sql`
+
+    Get the `actorId` and `firstName` of 10 actors.
+
+1. `two-kilmers.sql`
+
+    Get the `actorId` and `firstName` of only three actors with the `lastName` of `'Kilmer'`.
+
+1. `all-categories.sql`
+
+    Get all columns of all rows in the `categories` table.
+
+1. `all-customers.sql`
+
+    Get all columns of all rows in the `customers` table.
+
+1. `inactive-customers.sql`
+
+    Get all columns of all customers that have an "isActive" status of `false`.
+
+1. `five-customer-emails.sql`
+
+    Get the `customerId`, `firstName`, `lastName`, and `email` of 5 customers.
+
+1. `second-store-customers.sql`
+
+    Get the `email` of all customers that are registered at the DVD store with the `storeId` of `2`.
+
+1. `all-languages.sql`
+
+    Get all columns of all rows in the `languages` table.
+
+1. `all-films.sql`
+
+    Get all columns of all rows in the `films` table.
+
+1. `twenty-films-of-06.sql`
+
+    Get the `title`, `description`, and `releaseYear` of `20` films released in `2006`.
+
+1. `r-rated-films.sql`
+
+    Get the `filmId`, `title`, `description`, and `length`, of all R-rated films.
+
+1. `expensive-films.sql`
+
+    Get the `10` films with the highest `replacementCost`.
+
+1. `cheap-to-rent.sql`
+
+    Get the `filmId` and `title` of `50` films that cost less than `1` dollar to rent.
+
+1. `west-bengali-postal-codes.sql`
+
+    Get the `line1` and `postalCode` of every address in the `'West Bengali'` district.
 
 ### Submitting Your Solution
 
