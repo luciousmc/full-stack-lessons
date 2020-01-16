@@ -5,7 +5,7 @@ To get started, you'll be creating a fork of the `Learning-Fuze/lfz-full-stack-l
 
 ### Fork the Repository on GitHub
 
-Visit the [`Learning-Fuze/lfz-full-stack-lessons`](github.com/Learning-Fuze/lfz-full-stack-lessons) GitHub repository and click the **Fork** button. GitHub will create a copy of the repository under your own account.
+Visit the [`Learning-Fuze/lfz-full-stack-lessons`](https://github.com/Learning-Fuze/lfz-full-stack-lessons) GitHub repository and click the **Fork** button. GitHub will create a copy of the repository under your own account.
 
 ### Clone Your Fork from GitHub
 
