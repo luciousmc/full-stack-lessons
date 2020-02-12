@@ -9,7 +9,6 @@ switch (inputCmd) {
   case 'create':
     const inputItem = process.argv[3];
     createItem(inputItem);
-    readAll();
     break;
   case 'delete':
     break;
@@ -25,5 +24,13 @@ function readAll () {
 }
 function createItem (item) {
     list.notes[list.nextId.toString()] = item;
-    list.nextId++
+    list.nextId++;
+    writeJSON();
+}
+function writeJSON () {
+  const json_obj = JSON.stringify(list, null, 2);
+  fs.writeFile('data.json', json_obj, (err)=> {
+    if (err) throw err;
+    readAll();
+  })
 }
