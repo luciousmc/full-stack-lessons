@@ -17,4 +17,9 @@ const testArr = [
 ];
 
 const testArrJson = JSON.stringify(testArr);
-console.log('The JSON object is: ', testArrJson, '\n and its data type is ', typeof testArrJson);
+console.log('The JSON object is: ', testArrJson, '\n and its data type is: ', typeof testArrJson);
+
+const student = '{"name":"Sherielyn","age":24,"subject":"Home Economics"}';
+
+const studentObj = JSON.parse(student);
+console.log('The student obj is: ', studentObj, '\n and its data type is: ', typeof studentObj);
