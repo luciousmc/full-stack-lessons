@@ -16,3 +16,5 @@ const testArr = [
   }
 ];
 
+const testArrJson = JSON.stringify(testArr);
+console.log('The JSON object is: ', testArrJson, '\n and its data type is ', typeof testArrJson);
