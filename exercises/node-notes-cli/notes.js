@@ -8,6 +8,7 @@ switch (inputCmd) {
     readAll();
     break;
   case 'create':
+  case 'add':
     const createTxt = inputItem;
     if (!createTxt) {
       console.error('Error: Please enter text to be saved');
