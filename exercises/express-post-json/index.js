@@ -4,6 +4,8 @@ const server = express();
 const grades =  [];
 let nextID =    1;
 
+server.use(express.static(__dirname + '/public'));
+
 server.use(express.json(), (req, res, next) => {
   if (req.method === 'POST') {
     req.body.id = nextID++;
