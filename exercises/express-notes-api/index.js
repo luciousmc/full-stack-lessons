@@ -18,7 +18,7 @@ server.get('/api/notes/:id', (req, res) => {
 
   // ERROR if id does not exist in note list
   if (!grades.notes.hasOwnProperty(id)) {
-    return res.sendStatus(404);
+    return res.status(404).json({ error: `Cannot find id ${id}` });
   }
   res.json(grades.notes[id]);
 });
