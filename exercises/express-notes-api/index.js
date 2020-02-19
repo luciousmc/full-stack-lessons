@@ -24,6 +24,28 @@ server.get('/api/notes/:id', (req, res) => {
   res.json(grades.notes[id]);
 });
 
+// User can DELETE a note using the id of the note
+server.delete('/api/notes/:id', (req, res) => {
+  const id = req.params.id;
+
+  // ERROR if id is not a positive number
+  if (isNaN(id) || id < 1) {
+    return res.status(400).json({ error: 'ID must be a positive integer'});
+  }
+
+  // ERROR if id does not exist in note list
+  if (!grades.notes.hasOwnProperty(id)) {
+    return res.status(404).json({ error: `Cannot find id ${id}` });
+  }
+  delete grades.notes[id];
+  fs.writeFile('./data.json', JSON.stringify(grades, null, 2), (err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Sorry, an unexpected error occured while trying to delete id ' + id })
+    }
+    res.sendStatus(204);
+  });
+});
+
 // User can POST a new note 
 // Use express.json() middleware to handle request body
 server.use('/api/notes', express.json(), (req, res) => {
