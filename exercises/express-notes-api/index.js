@@ -48,9 +48,9 @@ server.delete('/api/notes/:id', (req, res) => {
 
 // User can POST a new note 
 // Use express.json() middleware to handle request body
-server.use('/api/notes', express.json(), (req, res) => {
+server.post('/api/notes', express.json(), (req, res) => {
   // If there is no content, throw a 400 error
-    if (!req.body.content) {
+  if (!req.body.content) {
     return res.status(400).json({ error: 'content property is required for POST' }); 
   }
   // Assign the request body the next Id
@@ -65,7 +65,39 @@ server.use('/api/notes', express.json(), (req, res) => {
       return res.status(500).json({ error: 'Sorry there was an unexpected error' });
     }
     res.status(201).json(req.body);
-  }) 
+  }); 
+});
+
+// User can change(PUT) the content of a note
+server.put('/api/notes/:id', express.json(), (req, res) => {
+  const id = req.params.id;
+  // ERROR if id is not a positive number
+  if (isNaN(id) || id < 1) {
+    return res.status(400).json({ error: 'ID must be a positive integer'});
+  }
+
+  // If there is no content, throw a 400 error
+  if (!req.body.content) {
+    return res.status(400).json({ error: 'content property is required for POST' }); 
+  }
+
+  // ERROR if id does not exist in note list
+  if (!grades.notes.hasOwnProperty(id)) {
+    return res.status(404).json({ error: `Cannot find id ${id}` });
+  }
+  // Assign the request body the Id to replace
+  req.body.id = parseInt(id);
+
+  // Replace the old object with the new one with updated content
+  grades.notes[req.body.id] = req.body;
+
+  // Write the changes to the data.json file
+  fs.writeFile('./data.json', JSON.stringify(grades, null, 2), (err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Sorry, an unexpected error occured while trying to update the object' });
+    }
+    res.status(200).json(req.body);
+  })
 });
 
 
