@@ -1,0 +1,30 @@
+.button {
+  width: 200px;
+  height: 100px;
+  border: 2px solid black;
+}
+.button:hover {
+  cursor:pointer;
+  box-shadow: 1px 2px 5px black;
+}
+.white {
+  background-color: white;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.purple {
+  background-color: purple;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
