@@ -1,0 +1,54 @@
+.toggle-container {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  width: 400px;
+  -ms-grid-columns: 75% 25%;
+      grid-template-columns: 75% 25%;
+}
+
+.toggle-container .switch-container {
+  border: 1px solid black;
+}
+
+.toggle-container .switch-container.off {
+  background-color: gray;
+}
+
+.toggle-container .switch-container.on {
+  background-color: green;
+}
+
+.toggle-container .switch-container:hover {
+  cursor: pointer;
+}
+
+.toggle-container .switch-container .switch {
+  position: relative;
+  width: 33%;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.toggle-container .switch-container.off .switch {
+  left: 0;
+}
+
+.toggle-container .switch-container.on .switch {
+  left: 66%;
+}
+
+.toggle-container .status-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=styles.css.map */
