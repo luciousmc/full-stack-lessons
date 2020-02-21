@@ -1,0 +1,40 @@
+$on:   green;
+$off:  gray;
+
+.toggle-container {
+  display: inline-grid;
+  width: 400px;
+  grid-template-columns: 75% 25%;
+  .switch-container {
+    border: 1px solid black;
+    &.off {
+      background-color: $off;
+    }
+    &.on {
+      background-color: $on;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    .switch {
+      position: relative;
+      width: 33%;
+      height: 100px;
+      background-color: white;
+      border: 1px solid black;
+      transition: .3s;
+    }
+    &.off .switch {
+      left: 0;
+    }
+    &.on .switch {
+      left: 66%;
+    }
+  }
+
+  .status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }  
+}
