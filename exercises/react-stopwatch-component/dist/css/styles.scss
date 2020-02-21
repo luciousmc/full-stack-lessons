@@ -1,0 +1,42 @@
+
+.container {
+  display: grid;
+  margin: auto;
+  width: 1000px;
+  justify-content: center;
+  grid-template-rows: auto auto;
+  row-gap: 15px;
+
+  .watch-container {
+    display: flex;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    .watch {
+      margin: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .clock {
+        font-size: 3em;
+      }
+    }
+  }
+
+  .btn-container {
+    margin: auto;
+    .play-btn {
+      font-size: 3em;    
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
