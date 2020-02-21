@@ -1,0 +1,46 @@
+.container {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  row-gap: 10px;
+      grid-template-areas: "label check" "password check" "submit check";
+}
+
+form label {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: label;
+  font-size: 3em;
+  display: block;
+}
+
+form #password {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: password;
+  font-size: 2.5em;
+  margin: auto;
+}
+
+form [name="submit"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: submit;
+  font-size: 1.5em;
+}
+
+.icon-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: check;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  font-size: 2em;
+}
+/*# sourceMappingURL=styles.css.map */
