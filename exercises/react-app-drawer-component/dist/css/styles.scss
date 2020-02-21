@@ -1,0 +1,54 @@
+/* COLOR VARIABLES */
+$main: cyan;
+$text-primary: black;
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+.menu-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+menu {
+  position: absolute;
+  display: flex;
+  width: 20vw;
+  background-color: $main;
+  color: $text-primary;
+  margin: 0;
+  height: 100vh;
+  padding: 20px;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  h1 {
+    font-size: 2em;
+  }
+  ul {
+    padding: 0;
+    text-align: center;
+
+    li {
+      list-style-type: none;
+      margin: 10px 0;
+  
+      a {
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: $text-primary;
+    
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+}
