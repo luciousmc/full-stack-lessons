@@ -9,19 +9,39 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.icon {
+  font-size: 3em;
+  padding: 25px;
+}
+
+.icon .bars:hover {
+  cursor: pointer;
+  color: yellow;
+}
+
 .menu-overlay {
   position: absolute;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.menu-overlay.show {
+  display: block;
+}
+
+.menu-overlay.hidden {
+  display: none;
+}
+
 menu {
   position: absolute;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 20vw;
+  width: 200px;
   background-color: cyan;
   color: black;
   margin: 0;
@@ -34,6 +54,8 @@ menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 menu h1 {
@@ -58,5 +80,13 @@ menu ul li a {
 
 menu ul li a:hover {
   color: yellow;
+}
+
+menu.closed {
+  left: -240px;
+}
+
+menu.open {
+  left: 0;
 }
 /*# sourceMappingURL=styles.css.map */
