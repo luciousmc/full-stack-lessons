@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+section {
+  width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .subject-header {
+    background-color: gray;
+    text-shadow: 1px 1px 2px white;
+    border: 1px solid black;
+    padding: 5px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .subject-content {
+    padding: 10px;
+    border: 1px solid black;
+  }
+}
