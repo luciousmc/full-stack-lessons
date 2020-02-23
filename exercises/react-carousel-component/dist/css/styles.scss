@@ -1,0 +1,23 @@
+$primaryColor:   black;
+$secondaryColor: white;
+
+
+.img-container {
+  position: relative;
+  width: 500px;
+  border: 2px solid $primaryColor;
+}
+.arrow-previous, .arrow-next {
+  position: absolute;
+  border: 2px solid $primaryColor;
+}
+
+.arrow-previous {
+  border: 2px 0 0 2px;
+  transform: rotateX(45deg);
+}
+
+.arrow-next {
+  border: 2px 2px 0 0;
+  transform: rotateX(-45deg);
+}
