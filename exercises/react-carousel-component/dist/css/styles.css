@@ -1,23 +1,84 @@
-.img-container {
+body {
+  margin: 0;
+}
+
+.carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.carousel .img-container {
   position: relative;
-  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 600px;
+  height: 300px;
+  padding: 20px;
   border: 2px solid black;
+  overflow: hidden;
 }
 
-.arrow-previous, .arrow-next {
+.carousel .img-container .arrow-previous, .carousel .img-container .arrow-next {
+  width: 25px;
+  height: 25px;
   position: absolute;
-  border: 2px solid black;
+  border: 4px solid black;
 }
 
-.arrow-previous {
-  border: 2px 0 0 2px;
-  -webkit-transform: rotateX(45deg);
-          transform: rotateX(45deg);
+.carousel .img-container .arrow-previous {
+  top: 50%;
+  left: 5%;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
 }
 
-.arrow-next {
-  border: 2px 2px 0 0;
-  -webkit-transform: rotateX(-45deg);
-          transform: rotateX(-45deg);
+.carousel .img-container img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.carousel .img-container .arrow-next {
+  top: 50%;
+  right: 5%;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+}
+
+.carousel .dots-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carousel .dots-container .dot-nav {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.carousel .dots-container .dot-nav.active {
+  background-color: black;
 }
 /*# sourceMappingURL=styles.css.map */

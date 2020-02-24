@@ -10,12 +10,23 @@ class Carousel extends React.Component {
     
   }
   render() {
+ 
     return(
-      <figure className="img-container">
+      <div className="carousel">
         <div className="arrow-previous"></div>
-        <img src="images/pikachu.png" alt="PIkacu"/>
-        <div className="arrow-next"></div>
-      </figure>
+
+        <figure className="img-container">
+         <img src="images/pikachu.png" alt="PIkacu"/>
+         <img src="images/squirtle.png" alt=""/>
+        </figure>
+        
+        <div className="dots-container">
+          <div className="dot-nav active"></div>
+          <div className="dot-nav"></div>
+          <div className="dot-nav"></div>
+          <div className="dot-nav"></div>
+        </div>
+      </div>
     );
   }
 }
