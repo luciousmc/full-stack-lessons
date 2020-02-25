@@ -1,1 +1,24 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+body {
+  margin: 30px;
+}
+
+.carousel {
+  width: 650px;
+  border: 2px solid black;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
+}
+
+.slider-container img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=styles.css.map */

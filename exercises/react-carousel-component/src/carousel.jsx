@@ -4,9 +4,7 @@ export default class Carousel extends React.Component {
   render() {
     return(
       <section className="carousel">
-        <div className="slider-container">
-          <Slider images={ this.props.images } />
-        </div>
+        <Slider images={ this.props.images } />
       </section>
     )
   }
@@ -33,15 +31,18 @@ class Slider extends React.Component {
   render() {
     return(
       <>
-        <div>
-          <div className="btn-previous" onClick={ this.handlePrevClick }></div>
+        <div className="slider-container">
+          <div className="btn-previous-container" onClick={ this.handlePrevClick }>
+            <div className="btn-previous"></div>
+          </div>
           <figure className="image">
-            {/* <img src={ this.props.images[this.state.currImg] } alt=""/> */}
             <ImageList images={ this.props.images } currImg={ this.state.currImg } />
           </figure>
-          <div className="btn-next" onClick={ this.handleNextClick }></div>
+          <div className="btn-next-container" onClick={ this.handleNextClick }>
+            <div className="btn-next"></div>
+          </div>
         </div>
-        <div className="dots">
+        <div className="dots-container">
           <Dots images={ this.props.images } currImg={ this.state.currImg } />
         </div>
       </>
