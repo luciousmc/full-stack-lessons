@@ -1,0 +1,105 @@
+body {
+  margin: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.carousel {
+  width: 600px;
+  height: 330px;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.slider-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider-container .btn-previous-container, .slider-container .btn-next-container {
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.slider-container .btn-previous-container .btn-previous {
+  width: 30px;
+  height: 30px;
+  border-width: 4px 0 0 4px;
+  border-style: solid;
+  border-color: black;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.slider-container .img-container {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-container .img-container .image {
+  width: 100%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+}
+
+.slider-container .img-container .image img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.slider-container .btn-next-container .btn-next {
+  width: 30px;
+  height: 30px;
+  border-width: 4px 4px 0 0;
+  border-style: solid;
+  border-color: black;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.dots-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+}
+
+.dots-container .dot {
+  width: 8px;
+  height: 8px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots-container .dot.active {
+  background: #000;
+}
+/*# sourceMappingURL=styles.css.map */
