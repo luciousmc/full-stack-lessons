@@ -18,6 +18,7 @@ class Slider extends React.Component {
     }
     this.timerID = null;
     this.imgCount = this.props.images.length;
+    this.setImg = this.setImg.bind(this);
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
   }
@@ -47,8 +48,15 @@ class Slider extends React.Component {
   }
   handleNextClick() {
     this.delayScroll();
-    if (this.state.currImg === this.imgCount - 1) return;
-    this.setState(state=> ({ currImg: state.currImg + 1 }));
+    if (this.state.currImg === this.imgCount - 1) {
+      this.setState({ currImg: 0 })
+    } else {
+      this.setState(state=> ({ currImg: state.currImg + 1 }));
+    }
+  }
+  setImg(index) {
+    this.delayScroll();
+    this.setState({ currImg: index });
   }
   render() {
     return(
@@ -65,7 +73,7 @@ class Slider extends React.Component {
           </div>
         </div>
         <div className="dots-container">
-          <Dots images={ this.props.images } currImg={ this.state.currImg } />
+          <Dots setImg={ this.setImg } images={ this.props.images } currImg={ this.state.currImg } />
         </div>
       </>
     )
@@ -92,7 +100,7 @@ class Dots extends React.Component {
 
     return this.props.images.map((image, index)=> {
       return(
-        <div className={ `dot ${ currImg === index ? 'active' : ' '}` } key={ index }></div>
+        <div onClick={ ()=> this.props.setImg(index) } className={ `dot ${ currImg === index ? 'active' : ' '}` } key={ index }></div>
       )
     })
   }
