@@ -1,23 +1,87 @@
 body {
   margin: 30px;
+  box-sizing: border-box;
 }
 
 .carousel {
-  width: 650px;
+  width: 600px;
+  height: 330px;
   border: 2px solid black;
   padding: 1rem;
-  overflow: hidden;
 }
 
 .slider-container {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  display: flex;
+
+  .btn-previous-container, .btn-next-container {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 
   .btn-previous-container {
-    
+
+    .btn-previous {
+      width: 30px;
+      height: 30px;
+      border-width: 4px 0 0 4px;
+      border-style: solid;
+      border-color: black;
+      transform: rotate(-45deg);
+    }
   }
-  img {
-    object-fit: contain;
+
+  .img-container {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+
+    .image {
+      width: 100%;
+      max-height: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+  
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .btn-next-container {
+
+    .btn-next {
+      width: 30px;
+      height: 30px;
+      border-width: 4px 4px 0 0;
+      border-style: solid;
+      border-color: black;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: #000;
   }
 }
