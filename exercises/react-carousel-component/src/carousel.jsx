@@ -34,20 +34,17 @@ class Slider extends React.Component {
       }
     }, 3000)
   }
-  delayScroll() {
+  resetAutoScroll() {
     clearInterval(this.timerID);
-
-    setTimeout(()=> {
-      this.autoScroll();
-    }, 6000);
+    this.autoScroll();
   }
   handlePrevClick() {
-    this.delayScroll();
+    this.resetAutoScroll();
     if (this.state.currImg === 0) return;
     this.setState(state=> ({ currImg: state.currImg - 1 }));
   }
   handleNextClick() {
-    this.delayScroll();
+    this.resetAutoScroll();
     if (this.state.currImg === this.imgCount - 1) {
       this.setState({ currImg: 0 })
     } else {
@@ -55,7 +52,7 @@ class Slider extends React.Component {
     }
   }
   setImg(index) {
-    this.delayScroll();
+    this.resetAutoScroll();
     this.setState({ currImg: index });
   }
   render() {
