@@ -1,16 +1,6 @@
 import React from 'react';
 
 export default class Carousel extends React.Component {
-  render() {
-    return(
-      <section className="carousel">
-        <Slider images={ this.props.images } />
-      </section>
-    )
-  }
-}
-
-class Slider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +47,7 @@ class Slider extends React.Component {
   }
   render() {
     return(
-      <>
+      <section className="carousel">
         <div className="slider-container">
           <div className="btn-previous-container" onClick={ this.handlePrevClick }>
             <div className="btn-previous"></div>
@@ -72,33 +62,34 @@ class Slider extends React.Component {
         <div className="dots-container">
           <Dots setImg={ this.setImg } images={ this.props.images } currImg={ this.state.currImg } />
         </div>
-      </>
+      </section>
     )
   }
 }
 
-class ImageList extends React.Component {
-  render() {
-    const currImg = this.props.currImg;
-    let img = this.props.images.filter((image, index) => {
-      if (currImg === index) return true;
-    });
+function ImageList(props) {
+  const currImg = props.currImg;
+  let img = props.images.filter((image, index) => {
+    if (currImg === index) return true;
+  });
+
+  return(
+    <figure className="image">
+      <img src={ img } alt={ `Slider Image` } />
+    </figure>
+  )
+}
+
+function Dots(props) {
+  const currImg = props.currImg;
+
+  return props.images.map((image, index)=> {
     return(
-      <figure className="image">
-        <img src={ img } alt={ `Slider Image` } />
-      </figure>
+      <div
+        onClick={ ()=> props.setImg(index) }
+        className={ `dot${ currImg === index ? ' active' : ''}` }
+        key={ index }
+      ></div>
     )
-  }
-}
-
-class Dots extends React.Component {
-  render() {
-    const currImg = this.props.currImg;
-
-    return this.props.images.map((image, index)=> {
-      return(
-        <div onClick={ ()=> this.props.setImg(index) } className={ `dot ${ currImg === index ? 'active' : ' '}` } key={ index }></div>
-      )
-    })
-  }
+  })
 }
