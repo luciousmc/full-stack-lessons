@@ -69,13 +69,17 @@ export default class Carousel extends React.Component {
 
 function ImageList(props) {
   const currImg = props.currImg;
+  let altTxt = 'Slider image ';
   let img = props.images.filter((image, index) => {
-    if (currImg === index) return true;
+    if (currImg === index) {
+      altTxt += index + 1;
+      return true;
+    }
   });
 
   return(
     <figure className="image">
-      <img src={ img } alt={ `Slider Image` } />
+      <img src={ img } alt={ altTxt } />
     </figure>
   )
 }
@@ -84,10 +88,12 @@ function Dots(props) {
   const currImg = props.currImg;
 
   return props.images.map((image, index)=> {
+    const isActive = currImg === index ? ' active' : '';
+
     return(
       <div
         onClick={ ()=> props.setImg(index) }
-        className={ `dot${ currImg === index ? ' active' : ''}` }
+        className={ 'dot' + isActive }
         key={ index }
       ></div>
     )
