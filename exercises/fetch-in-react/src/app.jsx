@@ -12,12 +12,22 @@ class App extends React.Component {
 
   componentDidMount() {
     /* your code here */
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+        .then(data => {
+          this.setState({ users: data, isLoading: false })
+        })
+      .catch(error => {
+        this.setState({ error: true, errMsg: error.message , isLoading: false })
+      })
   }
 
   render() {
     return this.state.isLoading
       ? <p>Loading...</p>
-      : <UserList users={this.state.users}/>;
+      : this.state.error
+        ? <h1>{this.state.errMsg}</h1>
+        : <UserList users={this.state.users}/>;
   }
 }
 
