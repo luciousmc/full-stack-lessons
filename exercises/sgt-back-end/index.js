@@ -35,8 +35,10 @@ server.post('/api/grades', express.json(), (req, res, next) => {
     return;
   }
 
-  const sql = `INSERT INTO "grades" ("name", "course", "grade")
-               VALUES ($1, $2, $3)`;
+  const sql = `
+    INSERT INTO "grades" ("name", "course", "grade")
+    VALUES ($1, $2, $3)
+    RETURNING *`;
   const values = [name, course, grade];
   db.query(sql, values)
     .then(response => {
@@ -76,7 +78,6 @@ server.put('/api/grades/:id', express.json(), (req, res, next) => {
   db.query(sql, values)
     .then(response => {
       const grade = response.rows[0];
-      console.log('the response is ', response);
       if (!grade) {
         res.status(404).json({ error: `Cannot find Id ${id}`});
         return;
@@ -88,6 +89,32 @@ server.put('/api/grades/:id', express.json(), (req, res, next) => {
     })
 })
 
+// User can DELETE records from the database
+server.delete('/api/grades/:gradeId', (req, res, next) => {
+  const { gradeId } = req.params;
+  if (!gradeId) {
+    res.status(400).json({ error: 'Must specify an ID to DELETE' });
+    return;
+  }
+  const sql = `
+    DELETE FROM "grades"
+    WHERE  "gradeId" = $1
+    RETURNING *`;
+  const values = [gradeId];
+
+  db.query(sql, values)
+    .then(response => {
+      const grade = response.rows;
+      if (!grade) {
+        res.status(404).json({ error: `Cannot find ID ${gradeId}`});
+        return;
+      }
+      res.status(204);
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'An unexpected error occurred' });
+    })
+})
 
 // Server listening port
 server.listen(3000, ()=> {
