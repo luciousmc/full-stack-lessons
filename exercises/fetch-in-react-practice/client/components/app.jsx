@@ -50,7 +50,6 @@ class App extends React.Component {
     fetch('/api/todos', fetchOptions)
       .then(response => response.json())
         .then(resObj => {
-          console.log('the response was: ', resObj);
           this.getAllTodos();
         })
   }
@@ -63,27 +62,30 @@ class App extends React.Component {
      * Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const update = {
-      isCompleted: !isCompleted
+    const update = {};
+    let todoItem;
+    for (let i = 0; i < this.state.todos.length; i++) {
+      if (this.state.todos[i].id === todoId) {
+        todoItem = this.state.todos[i];
+        update.isCompleted = !todoItem.isCompleted;
+      }
     }
-     const fetchOptions = {
-       method: 'PATCH',
-       headers: {
-         'Content-Type': 'application/json'
-       },
-       body: JSON.stringify(update)
-     }
+
+    const fetchOptions = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(update)
+    }
+
      fetch(`/api/todos/${todoId}`, fetchOptions)
       .then(response => response.json())
         .then(resObj => {
           this.setState(state => {
-            for (let i = 0; i < this.state.todos.length; i++) {
-              if (this.state.todos[i].id === todoId) {
-                state.todos[i].isCompleted = !state.todos[i].isCompleted;
-                return state;
-              }
-            }
+            todoItem = resObj;
           })
+          this.getAllTodos();
         })
   }
 

@@ -25,13 +25,18 @@
     },
     {
       "task": "one more time",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 6
     },
     {
       "task": "haha",
       "isCompleted": false,
       "id": 7
+    },
+    {
+      "task": "bobby",
+      "isCompleted": false,
+      "id": 8
     }
   ]
 }
